@@ -2,6 +2,7 @@
 
 sudo pacman --noconfirm -S zsh
 
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 git clone https://github.com/romkatv/powerlevel10k.git $HOME/.oh-my-zsh/custom/themes/powerlevel10k
 
@@ -13,5 +14,5 @@ echo "alias ip='ip -color=auto'" >> ~/.zsh_aliases
 echo "alias ls='ls --color=auto'" >> ~/.zsh_aliases
 echo "include /usr/share/nano/sh.nanorc" >> ~/.nanorc
 
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-source ~/.zshrc
+chsh -s "/usr/bin/zsh" "$USER"
+zsh
